@@ -1,0 +1,160 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+}
+
+.bg-primary {
+    background-color: #1e1f22 !important;
+}
+
+.bg-secondary{
+    background-color: #313338 !important;
+}
+
+.btn-primary{
+    background-color: #5865f2;
+    color: #fff;
+    border: 1px solid #1e1f22;
+}
+
+.btn-secondary{
+    background-color: #80848e;
+    color: #fff;
+    border: 1px solid #1e1f22;
+}
+
+/**************************************************************************************/
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+    background: #313338;
+    color: #fff;
+}
+
+.page {
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.container {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer {
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/**************************************************************************************/
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbarNav {
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    column-gap: 1.1cm;
+}
+
+/**************************************************************************************/
+
+.main {
+    padding-top: 2cm;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.calculator{
+    grid-template-rows: auto;
+    background: #2b2d31;
+    border: solid 0.1cm black;
+    border-radius: 0.2cm;
+    padding: 0.3cm 0.5cm 0.5cm 0.5cm;
+    font-size: x-large;
+}
+
+.calculator-number-box{
+    text-align: right;
+    padding: 0.2cm;
+    background: white;
+    color: black;
+    border-radius: 1cm;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns:
+            repeat(4, 0.5cm);
+    column-gap: 1.5cm;
+    row-gap: 0.2cm;
+    padding: 0.5cm 1.38cm 0 0;
+}
+
+.calculator-button {
+    width: 1.7cm;
+    font-size: large;
+}
+
+.button-disabled {
+    background-color: grey;
+}
+
+
+/**************************************************************************************/
+
+.about-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/**************************************************************************************/
+
+.profile {
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+}
+
+.profile-alert {
+    margin-bottom: 1cm;
+}
+
+.profile-table tr {
+    height: 1cm;
+}
+
+/**************************************************************************************/
+
+.signin {
+    padding-top: 0.5cm;
+    padding-bottom: 1cm;
+}
+
+.signup {
+    padding-top: 0.5cm;
+    padding-bottom: 1cm;
+}
+
+.sign-field {
+    margin-bottom: 0.4cm;
+}
