@@ -155,6 +155,10 @@ html, body {
     padding-bottom: 1cm;
 }
 
+.signout {
+    margin-left: 15px;
+}
+
 .sign-field {
     margin-bottom: 0.4cm;
 }

@@ -11,4 +11,9 @@ export class CalculatorView {
     getCalculatorButtons() {
         return this.calculatorButtons;
     }
+
+    handleDecimalPoint(element) {
+        if (this.numberElement.textContent.includes(".")) return;
+        this.updateDisplay(this.numberElement.textContent + element.textContent);
+    }
 }
