@@ -7,10 +7,9 @@ export class CalculatorModel {
         this.inputtingOperand = false;
         this.view = view;
         this.activeUser = JSON.parse(localStorage.getItem('activeUser'));
-        this.sessions = localStorage.getItem(this.activeUser.email + "Sessions").split(',');
+        if(this.activeUser) this.sessions = localStorage.getItem(this.activeUser.email + "Sessions");
+        if(this.sessions) this.sessions = this.sessions.split(',');
         this.activeSession = localStorage.getItem('activeSession');
-
-        console.log(this.activeSession)
 
         if (this.activeSession)this.setDisplayNumber(this.activeSession);
     }
@@ -123,7 +122,9 @@ export class ProfileModel {
     constructor(view) {
         this.view = view;
         this.activeUser = JSON.parse(localStorage.getItem('activeUser'));
-        this.sessions = localStorage.getItem(this.activeUser.email + "Sessions").split(',');
+        if (!this.activeUser)return;
+        this.sessions = localStorage.getItem(this.activeUser.email + "Sessions");
+        if (this.sessions) this.sessions = this.sessions.split(',');
 
         if (this.activeUser){
             this.view.hideProfileAlert();
@@ -166,9 +167,9 @@ export class SignInModel {
         if (user && user.password === password) {
             localStorage.setItem('activeUser', JSON.stringify(user));
             this.view.showSignOutButton();
-            alert('Sign in successful!');
+            this.view.sendAlert('Sign in successful!');
         } else {
-            alert('Invalid email or password.');
+            this.view.sendAlert('Invalid email or password.');
         }
         this.view.signInForm.reset();
     }
