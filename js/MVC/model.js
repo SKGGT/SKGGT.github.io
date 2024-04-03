@@ -20,13 +20,14 @@ export class CalculatorModel {
     }
 
     handleClearEntry() {
-        if (this.activeUser && this.displayNumber !== 0 && !this.sessions.includes(this.displayNumber)){
+        if (this.activeUser && this.displayNumber !== 0){
             if (!this.sessions){
                 this.sessions = [];
             }
-
-            this.sessions.push(this.displayNumber);
-            if (this.sessions.length > 3) this.sessions.shift();
+            if (!this.sessions.includes(this.displayNumber)){
+                this.sessions.push(this.displayNumber);
+                if (this.sessions.length > 3) this.sessions.shift();
+            }
 
             localStorage.setItem(this.activeUser.email + "Sessions", this.sessions.toString());
         }
