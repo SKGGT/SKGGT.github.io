@@ -85,35 +85,7 @@
           Bottom text
       </footer>
     </div>
-    <script>
-        const signUpForm = document.getElementById('sign-up-form');
-
-        signUpForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('InputName').value;
-            const email = document.getElementById('InputEmail').value;
-            const isMale = document.getElementById('radio1').checked;
-            const isFemale = document.getElementById('radio2').checked;
-            const dob = document.getElementById('InputDate').value;
-            const password = document.getElementById('InputPassword').value;
-
-            if (!name || !email || !dob || !password || !(isMale || isFemale)){
-                alert('All fields are required!');
-                signUpForm.reset();
-                return;
-            }
-
-            if (localStorage.getItem(email)){
-                alert('User with this email already exists!');
-                return;
-            }
-
-            const user = { name, email, isMale, dob, password };
-            localStorage.setItem(email, JSON.stringify(user));
-            alert('Sign up successful!');
-            signUpForm.reset();
-        });
-    </script>
+    <script type="module" src="../js/singup.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

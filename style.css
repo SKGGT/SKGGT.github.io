@@ -139,7 +139,12 @@ html, body {
     margin-bottom: 1cm;
 }
 
+.profile-welcome {
+    margin-bottom: 1cm;
+}
+
 .profile-table tr {
+    margin: 2cm;
     height: 1cm;
 }
 
@@ -156,6 +161,7 @@ html, body {
 }
 
 .signout {
+    margin-top: 0.4cm;
     margin-left: 15px;
 }
 
