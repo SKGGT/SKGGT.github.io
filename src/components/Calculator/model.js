@@ -13,7 +13,7 @@ export class CalculatorModel {
         this.sessions = localStorage.getItem(this.activeUser.email + "Sessions");
         if(this.sessions) this.sessions = this.sessions.split(',');
         // axios
-        //     .get(`/api/sessions?userId=${this.activeUser}`)
+        //     .get(`/api/users/${this.activeUser.email}`)
         //     .then((response) => {
         //         this.sessions = response.data;
         //         if(this.sessions) this.sessions = this.sessions.split(',');
@@ -45,7 +45,7 @@ export class CalculatorModel {
 
             localStorage.setItem(this.activeUser.email + "Sessions", this.sessions.toString());
             // axios
-            //     .post(` /api/sessions?userId=${this.activeUser.email}`, this.sessions, )
+            //     .post(` /api/users/${this.activeUser.email}`, this.sessions)
             //     .then((response) => {
             //         console.log(response);
             //     })

@@ -6,9 +6,9 @@
         You are not signed in!
       </div>
       <div id="userNameDisplay" :style="{display: (!isSighedIn)?'none':'block'}">Welcome {{userName}}!</div>
-      <table v-if="model && model.sessions" class="profile-table table table-primary">
+      <table v-if="sessions.length > 0" class="profile-table table table-primary">
         <tbody id="sessions-table">
-        <tr v-for="(session, index) in model.sessions.reverse()">
+        <tr  v-for="(session, index) in sessions">
           <th>
             Calculator session {{index + 1}}
           </th>
@@ -25,21 +25,16 @@
 <script>
 import {ProfileController} from "@/components/Profile/controller";
 import {ProfileModel} from "@/components/Profile/model";
-import index from "vuex";
 
 export default {
   name: 'ProfileView',
-  computed: {
-    index() {
-      return index
-    }
-  },
   data() {
     return {
       model: null,
       controller: null,
       sessionClick: Function,
       isSighedIn: false,
+      sessions: Array,
       userName: '',
     };
   },

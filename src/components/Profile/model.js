@@ -5,7 +5,7 @@ export class ProfileModel {
         this.activeUser = JSON.parse(localStorage.getItem('activeUser'));
         if (!this.activeUser)return;
         // axios
-        //     .get(`/api/sessions?userId=${this.activeUser}`)
+        //     .get(`/api/users/${this.activeUser.email}`)
         //     .then((response) => {
         //         this.sessions = response.data;
         //     })
@@ -22,23 +22,10 @@ export class ProfileModel {
         else{
             this.view.showProfileAlert();
         }
+        this.view.sessions = this.sessions;
     }
 
     handleSessionClick(session) {
         localStorage.setItem('activeSession', session);
-    }
-}
-
-export class SessionList {
-    constructor() {
-        this.sessions = [];
-    }
-
-    addSession(session){
-        this.sessions.push(session);
-    }
-
-    deleteSession(session){
-        this.sessions = this.sessions.filter(s => s === session);
     }
 }

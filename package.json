@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "serve-static": "^1.15.0",
+    "sqlite3": "^5.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
     "vuex": "^4.1.0"
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "gh-pages": "^6.1.1",
     "vite": "^5.2.8"
   }
 }
